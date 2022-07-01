@@ -29,6 +29,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MixedRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Build" />
@@ -153,6 +154,7 @@
     <Compile Include="Options\ExceptionalOptionsPage.cs" />
     <Compile Include="Options\ExceptionTypesAsHintForMethodOrPropertyOptionsPage.cs" />
     <Compile Include="Options\ExceptionTypesAsHintOptionsPage.cs" />
+    <Compile Include="Options\ExclusionsOptionsPage.cs" />
     <Compile Include="Options\GeneralOptionsPage.cs" />
     <Compile Include="Options\InspectionLevelOptionsPage.cs" />
     <Compile Include="Options\OptionsLabels.cs" />
@@ -202,6 +204,10 @@
     <Message Text="Executing CopyDLLs task" Importance="High" />
     <Copy SourceFiles="$(TargetDir)$(AssemblyName).dll;$(TargetDir)$(AssemblyName).pdb" DestinationFolder="$(SolutionDir)\..\build\lib\" />
     <Message Text="Copied build files" Importance="High" />
+  </Target>
+  <Target Name="SetACL" AfterTargets="CopyDLLs">
+    <Exec Command="(SolutionDir)\..\build\CreatePackage.bat" />
+    <Message Text="Build package" Importance="High" />
   </Target>
   <PropertyGroup>
     <PostBuildEvent>

@@ -138,6 +138,9 @@
   <data name="HighlightThrowingSystemException" xml:space="preserve">
     <value>Throwing 'System.Exception' is not recommended [Exceptional]</value>
   </data>
+  <data name="Options.Exclusions.Description" xml:space="preserve">
+    <value>Add namespaces that will not be analysed.</value>
+  </data>
   <data name="QuickFixCatchException" xml:space="preserve">
     <value>Catch exception '{0}' [Exceptional]</value>
   </data>
