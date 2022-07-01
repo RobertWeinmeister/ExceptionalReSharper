@@ -2,21 +2,9 @@
 
 ## Local Installation
 
-To install this package locally directly, add the location of the package to the ReSharper Extension Manager (In Visual Studio go to Extensions | Resharper | Options... | Environment | Extension Manager | Add). 
-2. 
+To install this extension locally, add the location of the package to the ReSharper Extension Manager (In Visual Studio go to Extensions | Resharper | Options... | Environment | Extension Manager | Add).
 
-
-    - In VS => Extensions => Resharper => Extension Manager => "Find the extension & Install it"
-
-2. New Build
-    - Change directory to the build directory `cd path\to\ExceptionalReSharper\build`
-    - Run `build.ps1`
-    - Now you should find a new package in `path\to\ExceptionalReSharper\build\Packages`
-    - Copy the *.nupkg file to your local repository
-    - In VS => Extensions => Resharper => Options => Extension Manager => Add => 
-        Name: Exceptional Local
-        Path: `path\to\ExceptionalReSharper\build\Packages` (Recommended to clone the Repo on the local volume "C:")
-    - In VS => Extensions => Resharper => Extension Manager => "Find the extension & Install it"   
+The extension should now be available.
 
 ## Update
 
