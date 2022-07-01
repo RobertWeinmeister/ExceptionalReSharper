@@ -1,8 +1,8 @@
-# Exceptional for ReSharper
+# Exceptional Continued for ReSharper
+
+Exceptional Continued is a continuation of the [ReSharper](https://www.jetbrains.com/resharper/) extension [Exceptional](https://github.com/CSharpAnalyzers/ExceptionalReSharper).
 
 Exceptional is an extension for ReSharper which analyzes thrown and documented C# exceptions and suggests improvements.
-
-**Last Update: Date: 31.3.2022 - Resharper SDK 2022.1.0 - Support Visual Studio 2022** 
 
 ### Motivation
 
@@ -12,22 +12,12 @@ Generally, the public API should be documented and thrown exceptions should be p
 
 ## Installation
 
-Requires ReSharper v8.2, v9, v10 or later
+Requires ReSharper.
 
 - Open the ReSharper menu in Visual Studio and select Extension Manager... 
 - Search for Exceptional and install the extension
 
 Open the menu ReSharper / Options... / Exceptional to configure the extension.
-
-For locally installation: [Installation](Installation.md)
-
-Check out the extension in the ReSharper plugin gallery (targets the latest R# version): 
- 
-- [Exceptional for ReSharper](https://resharper-plugins.jetbrains.com/packages/ExceptionalDevs.Exceptional/)
-
-Check out old versions: 
-
-- [Exceptional for ReSharper - All versions](https://plugins.jetbrains.com/plugin/11674-exceptional-for-resharper/versions)
 
 ## Features
 
@@ -78,9 +68,3 @@ Check out old versions:
 ### Do not throw System.Exception
 
 **Warning:** Throwing System.Exception should be avoided.
-
-More features to come...
-
-
-
-(This project has originally been [hosted on CodePlex](https://exceptional.codeplex.com/))
