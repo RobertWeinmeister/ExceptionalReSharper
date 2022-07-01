@@ -1,21 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package>
   <metadata>
-    <id>ExceptionalDevs.Exceptional</id>
-    <version>$Version$</version>
-    <title>$Title$</title>
-    <description>$Description$</description>
-    <authors>$Authors$</authors>
-    <projectUrl>https://github.com/CSharpAnalyzers/ExceptionalReSharper</projectUrl>
-    <copyright>$Copyright$</copyright>
+    <id>ExceptionalDevs.ExceptionalContinued</id>
+    <version>2022.1.2</version>
+    <title>Exceptional Continued</title>
+    <description>Analyzes thrown and documented C# exceptions and suggests improvements.</description>
+    <authors>Exceptional Devs, Robert Weinmeister</authors>
+    <projectUrl>https://github.com/RobertWeinmeister/ExceptionalReSharper</projectUrl>
+    <copyright></copyright>
     <tags>Exception XMLdoc</tags>
-    <licenseUrl>https://github.com/CSharpAnalyzers/ExceptionalReSharper/blob/master/LICENSE.md</licenseUrl>
-    <dependencies>
-      <dependency id="Wave" version="[213]" />
+    <licenseUrl>https://github.com/RobertWeinmeister/ExceptionalReSharper/blob/master/LICENSE.md</licenseUrl>
+   <dependencies>
+      <dependency id="Wave" version="[221]" />
     </dependencies>
   </metadata>
   <files>
-    <file src="..\src\Exceptional\bin\$Configuration$\ReSharper.Exceptional.dll" target="DotFiles" />
-    <file src="..\src\Exceptional\bin\$Configuration$\ReSharper.Exceptional.pdb" target="DotFiles" />
+    <file src="..\build\lib\ReSharper.Exceptional.dll" target="DotFiles" />
+    <file src="..\build\lib\ReSharper.Exceptional.pdb" target="DotFiles" />
   </files>
 </package>

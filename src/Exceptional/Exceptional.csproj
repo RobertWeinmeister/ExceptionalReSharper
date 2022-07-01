@@ -180,19 +180,13 @@
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
-    <MSBuildCommunityTasksPath>$(SolutionDir)\..\build\New\MSBuildTasks</MSBuildCommunityTasksPath>
+    <MSBuildCommunityTasksPath>$(SolutionDir)\..\build\MSBuildTasks</MSBuildCommunityTasksPath>
   </PropertyGroup>
-  <!--<PropertyGroup>
-    <HostFullIdentifier>ReSharperPlatformVs16_97041033Plugins</HostFullIdentifier>
-  </PropertyGroup>-->
   <Import Project="$(MSBuildCommunityTasksPath)\MSBuild.Community.Tasks.Targets" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="UpdateAssemblyInfo">
-    <AssemblyInfo CodeLanguage="CS" OutputFile="$(MSBuildProjectDirectory)\Properties\AssemblyInfo.cs" AssemblyTitle="$(Title)" AssemblyDescription="$(Description)" AssemblyProduct="Exceptional" AssemblyCompany="$(Authors)" AssemblyCopyright="$(Copyright)" AssemblyVersion="$(Version)" ComVisible="false" Guid="3628d589-e118-4c2c-bd8e-fdef6b6ed07c" />
-  </Target>
   <Target Name="CopyDLLs" AfterTargets="Build">
     <Message Text="Executing CopyDLLs task" Importance="High" />
-    <Copy SourceFiles="$(TargetDir)$(AssemblyName).dll;$(TargetDir)$(AssemblyName).pdb" DestinationFolder="$(SolutionDir)\..\build\Old Build\lib\" />
+    <Copy SourceFiles="$(TargetDir)$(AssemblyName).dll;$(TargetDir)$(AssemblyName).pdb" DestinationFolder="$(SolutionDir)\..\build\lib\" />
     <Message Text="Copied build files" Importance="High" />
   </Target>
   <PropertyGroup>

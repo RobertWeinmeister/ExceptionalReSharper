@@ -1,0 +1,1 @@
+nuget pack ExceptionalDevs.Exceptional.nuspec -Verbosity detailed -OutputDirectory ./Packages
