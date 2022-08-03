@@ -48,6 +48,8 @@ namespace ReSharper.Exceptional.Settings
         [SettingsEntry(true, "Use default optional method exceptions")]
         public bool UseDefaultOptionalMethodExceptions2 { get; set; }
 
+        [SettingsEntry("Tests", "Namespaces that will be excluded from analysis")]
+        public string ExclusionsNamespaces { get; set; }
 
         [SettingsEntry("", "Accessor overrides")]
         public string AccessorOverrides2 { get; set; }

@@ -205,10 +205,6 @@
     <Copy SourceFiles="$(TargetDir)$(AssemblyName).dll;$(TargetDir)$(AssemblyName).pdb" DestinationFolder="$(SolutionDir)\..\build\lib\" />
     <Message Text="Copied build files" Importance="High" />
   </Target>
-  <Target Name="SetACL" AfterTargets="CopyDLLs">
-    <Exec Command="(SolutionDir)\..\build\CreatePackage.bat" />
-    <Message Text="Build package" Importance="High" />
-  </Target>
   <PropertyGroup>
     <PostBuildEvent>
     </PostBuildEvent>

@@ -6,48 +6,52 @@ using JetBrains.IDE.UI.Extensions;
 using JetBrains.IDE.UI.Options;
 using JetBrains.Lifetimes;
 using JetBrains.Rd.Base;
-using JetBrains.ReSharper.UnitTesting.Analysis.nUnit;
 using ReSharper.Exceptional.Settings;
 
 namespace ReSharper.Exceptional.Options
 {
-    [OptionsPage(Pid, Name, typeof(UnnamedThemedIcons.ExceptionalSettings), ParentId = ExceptionalOptionsPage.Pid, Sequence = 0.0)]
+    [OptionsPage(Pid, Name, typeof(UnnamedThemedIcons.ExceptionalSettings), ParentId = ExceptionalOptionsPage.Pid,
+                 Sequence = 6.0)]
     public class ExclusionsOptionsPage : BeSimpleOptionsPage
     {
         public const string Name = "Exclusions";
-        public const string Pid = "Exceptional::Exclusions";
+        public const string Pid  = "Exceptional::Exclusions";
 
-        public ExclusionsOptionsPage(
-            Lifetime lifetime,
-            OptionsPageContext optionsPageContext,
-            OptionsSettingsSmartContext optionsSettingsSmartContext,
-            bool wrapInScrollablePanel = false) : base(lifetime, optionsPageContext, optionsSettingsSmartContext, wrapInScrollablePanel)
+        public ExclusionsOptionsPage(ref Lifetime lifetime, OptionsPageContext optionsPageContext,
+                                     OptionsSettingsSmartContext optionsSettingsSmartContext,
+                                     bool wrapInScrollablePanel = false) : base(lifetime, optionsPageContext,
+                                                                                    optionsSettingsSmartContext,
+                                                                                    wrapInScrollablePanel)
         {
             _ = AddText(Resources.Options_Exclusions_Description);
-            CreateRichTextExceptionTypesAsHint(lifetime, optionsSettingsSmartContext.StoreOptionsTransactionContext);
+            CreateRichTextExclusionsNamespace(ref lifetime, optionsSettingsSmartContext.StoreOptionsTransactionContext);
         }
 
-        private void CreateRichTextExceptionTypesAsHint(Lifetime lifetime, IContextBoundSettingsStoreLive storeOptionsTransactionContext)
+        private void CreateRichTextExclusionsNamespace(ref Lifetime                   lifetime,
+                                                       IContextBoundSettingsStoreLive storeOptionsTransactionContext)
         {
-            IProperty<string> property = new Property<string>(lifetime, "Exceptional::ExceptionTypesAsHintForMethodsOrProperties::ExceptionTypes");
-            property.SetValue(storeOptionsTransactionContext.GetValue((ExceptionalSettings key) => key.OptionalMethodExceptions2));
-            property.Change.Advise(
-                                   lifetime,
-                                   a =>
-                                   {
-                                       if(!a.HasNew)
-                                       {
-                                           return;
-                                       }
-                                       storeOptionsTransactionContext.SetValue((ExceptionalSettings key) => key.OptionalMethodExceptions2, a.New);
-                                   });
+            IProperty<string> property = new Property<string>(lifetime, "Exceptional::Exclusions::Namespaces");
+            _ = property.SetValue(storeOptionsTransactionContext.GetValue((ExceptionalSettings key) =>
+                                                                              key.ExclusionsNamespaces));
+            property.Change.Advise(lifetime, a =>
+                                             {
+                                                 if (!a.HasNew)
+                                                 {
+                                                     return;
+                                                 }
+
+                                                 storeOptionsTransactionContext
+                                                    .SetValue((ExceptionalSettings key) => key.ExclusionsNamespaces,
+                                                              a.New);
+                                             });
             var textControl = BeControls.GetTextControl(isReadonly: false);
             textControl.Text.SetValue(property.GetValue());
-            textControl.Text.Change.Advise(
-                                           lifetime,
+            textControl.Text.Change.Advise(lifetime,
                                            str =>
                                            {
-                                               storeOptionsTransactionContext.SetValue((ExceptionalSettings key) => key.OptionalMethodExceptions2, str);
+                                               storeOptionsTransactionContext
+                                                  .SetValue((ExceptionalSettings key) => key.ExclusionsNamespaces,
+                                                            str);
                                            });
             AddControl(textControl);
         }
