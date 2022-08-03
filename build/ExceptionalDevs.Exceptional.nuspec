@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>ExceptionalDevs.ExceptionalContinued</id>
-    <version>2022.1.2</version>
+    <version>2022.2.0</version>
     <title>Exceptional Continued</title>
     <description>Analyzes thrown and documented C# exceptions and suggests improvements.</description>
     <authors>Exceptional Devs, Robert Weinmeister</authors>
@@ -11,7 +11,7 @@
     <tags>Exception XMLdoc</tags>
     <licenseUrl>https://github.com/RobertWeinmeister/ExceptionalReSharper/blob/master/LICENSE.md</licenseUrl>
    <dependencies>
-      <dependency id="Wave" version="[221]" />
+      <dependency id="Wave" version="[222]" />
     </dependencies>
   </metadata>
   <files>
