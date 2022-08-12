@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>ExceptionalDevs.ExceptionalContinued</id>
-    <version>2022.2.0</version>
+    <version>2022.2.1.2-Debug</version>
     <title>Exceptional Continued</title>
     <description>Analyzes thrown and documented C# exceptions and suggests improvements.</description>
     <authors>Exceptional Devs, Robert Weinmeister</authors>
