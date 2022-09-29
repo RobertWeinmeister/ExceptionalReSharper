@@ -1,9 +1,11 @@
+using System;
 using System.Linq;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.Modules;
 using JetBrains.ReSharper.Psi.Tree;
 using ReSharper.Exceptional.Analyzers;
+using ReSharper.Exceptional.Utilities;
 
 namespace ReSharper.Exceptional.Models
 {
@@ -14,6 +16,11 @@ namespace ReSharper.Exceptional.Models
 
         public override void Accept(AnalyzerBase analyzer)
         {
+            if (IsNamespaceIgnored())
+            {
+                return;
+            }
+
             DocumentationBlock?.Accept(analyzer);
             base.Accept(analyzer);
         }
@@ -26,8 +33,7 @@ namespace ReSharper.Exceptional.Models
         {
             get
             {
-                var accessRightsOwner = Node as IAccessRightsOwner;
-                if (accessRightsOwner == null)
+                if (!(Node is IAccessRightsOwner accessRightsOwner))
                 {
                     return false;
                 }
@@ -53,12 +59,19 @@ namespace ReSharper.Exceptional.Models
 
         private bool IsNamespaceIgnored()
         {
-            var test                 = ServiceLocator.Settings.IgnoredNamespaces;
-            var namespaceDeclaration = Node.Root().Children<ICSharpNamespaceDeclaration>().First().QualifiedName;
-            return false;
+            var namesToIgnore =
+                ServiceLocator.Settings.IgnoredNamespaces.Split(new[] {Environment.NewLine},
+                                                                StringSplitOptions.RemoveEmptyEntries);
+            foreach (var name in namesToIgnore)
+            {
+                if (NamespaceChecker
+                   .HasNamespaceMatch(Node.Root().Children<ICSharpNamespaceDeclaration>().First().QualifiedName, name))
+                {
+                    return true;
+                }
+            }
 
-            //get list of namespaces
-            //does it match with one?
+            return false;
         }
     }
 }

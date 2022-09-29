@@ -32,7 +32,7 @@ namespace ReSharper.Exceptional.Options
         {
             IProperty<string> property = new Property<string>(lifetime, "Exceptional::IgnoredNamespaces::Namespaces");
             _ = property.SetValue(storeOptionsTransactionContext.GetValue((ExceptionalSettings key) =>
-                                                                              key.OptionalMethodExceptions2));
+                                                                              key.IgnoredNamespaces));
             property.Change.Advise(lifetime, a =>
                                              {
                                                  if (!a.HasNew)
@@ -41,7 +41,7 @@ namespace ReSharper.Exceptional.Options
                                                  }
 
                                                  storeOptionsTransactionContext
-                                                    .SetValue((ExceptionalSettings key) => key.OptionalMethodExceptions2,
+                                                    .SetValue((ExceptionalSettings key) => key.IgnoredNamespaces,
                                                               a.New);
                                              });
             var textControl = BeControls.GetTextControl(isReadonly: false);
@@ -50,8 +50,7 @@ namespace ReSharper.Exceptional.Options
                                            str =>
                                            {
                                                storeOptionsTransactionContext
-                                                  .SetValue((ExceptionalSettings key) => key.OptionalMethodExceptions2,
-                                                            str);
+                                                  .SetValue((ExceptionalSettings key) => key.IgnoredNamespaces, str);
                                            });
             AddControl(textControl);
         }

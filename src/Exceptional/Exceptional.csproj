@@ -162,6 +162,8 @@
     <Compile Include="Settings\OptionalMethodExceptionConfiguration.cs" />
     <Compile Include="Utilities\CodeElementFactory.cs" />
     <Compile Include="Utilities\NameFactory.cs" />
+    <Compile Include="Utilities\NamespaceChecker.cs" />
+    <Compile Include="Utilities\WildcardMatch.cs" />
   </ItemGroup>
   <ItemGroup>
     <ThemedIconPng Include="Images\ExceptionalSettings.png" />
