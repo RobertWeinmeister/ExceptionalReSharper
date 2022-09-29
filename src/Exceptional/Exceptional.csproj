@@ -64,7 +64,7 @@
       <Version>2022.3.1</Version>
     </PackageReference>
     <PackageReference Include="JetBrains.ReSharper.SDK" Version="2021.3.2">
-      <Version>2022.2.0</Version>
+      <Version>2022.2.1</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
@@ -96,6 +96,11 @@
     <Compile Include="Contexts\MethodProcessContext.cs" />
     <Compile Include="Contexts\NullProcessContext.cs" />
     <Compile Include="Contexts\ProcessContext.cs" />
+    <Compile Include="DefaultResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DefaultResource.resx</DependentUpon>
+    </Compile>
     <Compile Include="ExceptionalDaemonStage.cs" />
     <Compile Include="ExceptionalDaemonStageProcess.cs" />
     <Compile Include="ExceptionalRecursiveElementProcessor.cs" />
@@ -137,6 +142,7 @@
     <Compile Include="Models\TryStatementModel.cs" />
     <Compile Include="Options\AccessorOverridesOptionsPage.cs" />
     <Compile Include="Options\ExceptionalOptionsPage.cs" />
+    <Compile Include="Options\NamespacesToIgnoreOptionsPage.cs" />
     <Compile Include="Options\ExceptionTypesAsHintForMethodOrPropertyOptionsPage.cs" />
     <Compile Include="Options\ExceptionTypesAsHintOptionsPage.cs" />
     <Compile Include="Options\GeneralOptionsPage.cs" />
@@ -161,6 +167,8 @@
     <Compile Include="Settings\OptionalMethodExceptionConfiguration.cs" />
     <Compile Include="Utilities\CodeElementFactory.cs" />
     <Compile Include="Utilities\NameFactory.cs" />
+    <Compile Include="Utilities\NamespaceChecker.cs" />
+    <Compile Include="Utilities\WildcardMatch.cs" />
   </ItemGroup>
   <ItemGroup>
     <ThemedIconPng Include="Images\ExceptionalSettings.png" />
@@ -172,6 +180,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DefaultResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DefaultResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

@@ -117,40 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="HighlightCatchAllClauses" xml:space="preserve">
-    <value>Usage of catch-all clauses is not recommended [Exceptional]</value>
+  <data name="OptionsPage_NamespacesToIgnore_Explanation" xml:space="preserve">
+    <value>Separate multiple entries with line breaks. Wildcards ? and * are supported (for example: *Names?ace*).</value>
   </data>
-  <data name="HighlightEventNotDocumentedExceptions" xml:space="preserve">
-    <value>Possible 'System.Exception' from delegate invocation is not documented [Exceptional]</value>
-  </data>
-  <data name="HighlightNotDocumentedExceptions" xml:space="preserve">
-    <value>Exception '{0}' is not documented [Exceptional]</value>
-  </data>
-  <data name="HighlightNotThrownDocumentedExceptions" xml:space="preserve">
-    <value>Exception '{0}' is not thrown [Exceptional]</value>
-  </data>
-  <data name="HighlightSwallowingExceptions" xml:space="preserve">
-    <value>Swallowing exceptions in catch-all clause is not recommended [Exceptional]</value>
-  </data>
-  <data name="HighlightThrowingFromCatchWithoutInnerException" xml:space="preserve">
-    <value>Caught exception should be passed as inner exception [Exceptional]</value>
-  </data>
-  <data name="HighlightThrowingSystemException" xml:space="preserve">
-    <value>Throwing 'System.Exception' is not recommended [Exceptional]</value>
-  </data>
-  <data name="Options.Exclusions.Description" xml:space="preserve">
-    <value>Add namespaces that will not be analysed.</value>
-  </data>
-  <data name="QuickFixCatchException" xml:space="preserve">
-    <value>Catch exception '{0}' [Exceptional]</value>
-  </data>
-  <data name="QuickFixIncludeInnerException" xml:space="preserve">
-    <value>Include caught exception as inner exception [Exceptional]</value>
-  </data>
-  <data name="QuickFixInsertExceptionDocumentation" xml:space="preserve">
-    <value>Add documentation for exception '{0}' [Exceptional]</value>
-  </data>
-  <data name="QuickFixRemoveExceptionDocumentation" xml:space="preserve">
-    <value>Remove unnecessary exception documentation [Exceptional]</value>
+  <data name="OptionsPage_NamespacesToIgnore_Text" xml:space="preserve">
+    <value>List namespaces that should be ignored from analysis.</value>
   </data>
 </root>
