@@ -10,20 +10,17 @@ using ReSharper.Exceptional.Settings;
 
 namespace ReSharper.Exceptional.Options
 {
-    [OptionsPage(Pid, Name, typeof(UnnamedThemedIcons.ExceptionalSettings), ParentId = ExceptionalOptionsPage.Pid,
-                 Sequence = 6.0)]
+    [OptionsPage("Exceptional::IgnoredNamespaces", "Ignored Namespaces", typeof(UnnamedThemedIcons.ExceptionalSettings),
+                 ParentId = ExceptionalOptionsPage.Pid, Sequence = 6.0)]
     public class NamespacesToIgnoreOptionsPage : BeSimpleOptionsPage
     {
-        private const string Name = "Ignored Namespaces";
-        private const string Pid  = "Exceptional::IgnoredNamespaces";
-
         public NamespacesToIgnoreOptionsPage(Lifetime lifetime, OptionsPageContext optionsPageContext,
                                              OptionsSettingsSmartContext optionsSettingsSmartContext,
                                              bool wrapInScrollablePanel = true) : base(lifetime, optionsPageContext,
             optionsSettingsSmartContext, wrapInScrollablePanel)
         {
-            _ = AddText("Here you can ignore namespaces");
-            _ = AddText("Wildcards are supported");
+            _ = AddText(DefaultResource.OptionsPage_NamespacesToIgnore_Text);
+            _ = AddText(DefaultResource.OptionsPage_NamespacesToIgnore_Explanation);
             CreateRichTextNamespacesToIgnore(lifetime, optionsSettingsSmartContext.StoreOptionsTransactionContext);
         }
 

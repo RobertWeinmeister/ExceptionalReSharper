@@ -12,7 +12,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptional.Playground", "E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptional", "Exceptional\Exceptional.csproj", "{4A9F937D-0046-4087-AFBF-780683BF233A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionalTests", "ExceptionalTests\ExceptionalTests.csproj", "{468FC5AE-6FD5-41DF-B498-6A51E66A0918}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExceptionalTests", "ExceptionalTests\ExceptionalTests.csproj", "{468FC5AE-6FD5-41DF-B498-6A51E66A0918}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

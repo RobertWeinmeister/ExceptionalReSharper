@@ -96,6 +96,11 @@
     <Compile Include="Contexts\MethodProcessContext.cs" />
     <Compile Include="Contexts\NullProcessContext.cs" />
     <Compile Include="Contexts\ProcessContext.cs" />
+    <Compile Include="DefaultResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DefaultResource.resx</DependentUpon>
+    </Compile>
     <Compile Include="ExceptionalDaemonStage.cs" />
     <Compile Include="ExceptionalDaemonStageProcess.cs" />
     <Compile Include="ExceptionalRecursiveElementProcessor.cs" />
@@ -175,6 +180,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DefaultResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DefaultResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
