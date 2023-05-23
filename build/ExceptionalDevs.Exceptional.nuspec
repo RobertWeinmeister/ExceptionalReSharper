@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>ExceptionalDevs.ExceptionalContinued</id>
-    <version>2022.2.0</version>
+    <version>2023.1.2</version>
     <title>Exceptional Continued</title>
     <description>Analyzes thrown and documented C# exceptions and suggests improvements.</description>
     <authors>Exceptional Devs, Robert Weinmeister</authors>
@@ -14,7 +14,7 @@
       Some update description
 	</releaseNotes>
    <dependencies>
-      <dependency id="Wave" version="[222]" />
+      <dependency id="Wave" version="[231]" />
     </dependencies>
   </metadata>
   <files>
