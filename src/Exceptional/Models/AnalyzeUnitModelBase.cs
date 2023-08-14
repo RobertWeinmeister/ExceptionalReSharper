@@ -60,7 +60,7 @@ namespace ReSharper.Exceptional.Models
         private bool IsNamespaceIgnored()
         {
             var namesToIgnore =
-                ServiceLocator.Settings.IgnoredNamespaces.Split(new[] {Environment.NewLine},
+                ServiceLocator.Settings.ExcludedNamespaces.Split(new[] {Environment.NewLine},
                                                                 StringSplitOptions.RemoveEmptyEntries);
             foreach (var name in namesToIgnore)
             {

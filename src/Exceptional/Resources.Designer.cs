@@ -124,6 +124,42 @@ namespace ReSharper.Exceptional {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Accessibility levels.
+        /// </summary>
+        internal static string Options_CodeInspection_AccessibilityLevels_Header {
+            get {
+                return ResourceManager.GetString("Options_CodeInspection_AccessibilityLevels_Header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Separate multiple entries with line breaks. Wildcards ? and * are supported (for example: *Names?ace*)..
+        /// </summary>
+        internal static string Options_CodeInspection_ExcludedNamespaces_Explanation {
+            get {
+                return ResourceManager.GetString("Options_CodeInspection_ExcludedNamespaces_Explanation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Excluded namespaces.
+        /// </summary>
+        internal static string Options_CodeInspection_ExcludedNamespaces_Header {
+            get {
+                return ResourceManager.GetString("Options_CodeInspection_ExcludedNamespaces_Header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to List namespaces that should be ignored from analysis..
+        /// </summary>
+        internal static string Options_CodeInspection_ExcludedNamespaces_Text {
+            get {
+                return ResourceManager.GetString("Options_CodeInspection_ExcludedNamespaces_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add namespaces that will not be analysed..
         /// </summary>
         internal static string Options_Exclusions_Description {

@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>ExceptionalDevs.ExceptionalContinued</id>
-    <version>2022.2.1.4-Debug</version>
+    <version>2022.2.1.6-Debug</version>
     <title>Exceptional Continued</title>
     <description>Analyzes thrown and documented C# exceptions and suggests improvements.</description>
     <authors>Exceptional Devs, Robert Weinmeister</authors>
@@ -18,7 +18,7 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="..\build\lib\ReSharper.Exceptional.dll" target="DotFiles" />
-    <file src="..\build\lib\ReSharper.Exceptional.pdb" target="DotFiles" />
+    <file src="lib\ReSharper.Exceptional.dll" target="DotFiles" />
+    <file src="lib\ReSharper.Exceptional.pdb" target="DotFiles" />
   </files>
 </package>

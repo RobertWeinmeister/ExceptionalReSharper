@@ -141,6 +141,12 @@
   <data name="Options.Exclusions.Description" xml:space="preserve">
     <value>Add namespaces that will not be analysed.</value>
   </data>
+  <data name="Options_CodeInspection_ExcludedNamespaces_Explanation" xml:space="preserve">
+    <value>Separate multiple entries with line breaks. Wildcards ? and * are supported (for example: *Names?ace*).</value>
+  </data>
+  <data name="Options_CodeInspection_ExcludedNamespaces_Text" xml:space="preserve">
+    <value>List namespaces that should be ignored from analysis.</value>
+  </data>
   <data name="QuickFixCatchException" xml:space="preserve">
     <value>Catch exception '{0}' [Exceptional]</value>
   </data>
@@ -152,5 +158,11 @@
   </data>
   <data name="QuickFixRemoveExceptionDocumentation" xml:space="preserve">
     <value>Remove unnecessary exception documentation [Exceptional]</value>
+  </data>
+  <data name="Options_CodeInspection_ExcludedNamespaces_Header" xml:space="preserve">
+    <value>Excluded namespaces</value>
+  </data>
+  <data name="Options_CodeInspection_AccessibilityLevels_Header" xml:space="preserve">
+    <value>Accessibility levels</value>
   </data>
 </root>

@@ -76,7 +76,7 @@ System.Collections.Generic.Dictionary.Item,System.Collections.Generic.KeyNotFoun
         public bool UseDefaultOptionalMethodExceptions2 { get; set; }
 
         [SettingsEntry("Tests", "Namespaces that will be excluded from analysis")]
-        public string IgnoredNamespaces { get; set; }
+        public string ExcludedNamespaces { get; set; }
 
         [SettingsEntry("", "Accessor overrides")]
         public string AccessorOverrides2 { get; set; }
