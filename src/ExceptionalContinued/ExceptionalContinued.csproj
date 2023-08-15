@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4A9F937D-0046-4087-AFBF-780683BF233A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ReSharper.ExceptionalContinued</RootNamespace>
+    <AssemblyName>ReSharper.ExceptionalContinued</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <LangVersion>9.0</LangVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Build" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="JetBrains.Annotations">
+      <Version>2023.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="JetBrains.Lifetimes">
+      <Version>2023.2.2</Version>
+    </PackageReference>
+    <PackageReference Include="JetBrains.RdFramework">
+      <Version>2023.2.2</Version>
+    </PackageReference>
+    <PackageReference Include="JetBrains.ReSharper.SDK" Version="2021.3.2">
+      <Version>2023.2.0</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="JetBrains.RdFramework">
+      <Version>2022.1.4</Version>
+    </PackageReference>
+    <PackageReference Include="JetBrains.ReSharper.SDK" Version="2021.3.4">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="MSBuildTasks">
+      <Version>1.5.0.235</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Analyzers\AnalyzerBase.cs" />
+    <Compile Include="Analyzers\CatchAllClauseAnalyzer.cs" />
+    <Compile Include="Analyzers\HasInnerExceptionFromOuterCatchClauseAnalyzer.cs" />
+    <Compile Include="Analyzers\IsDocumentedExceptionThrownAnalyzer.cs" />
+    <Compile Include="Analyzers\IsThrowingSystemExceptionAnalyzer.cs" />
+    <Compile Include="Analyzers\IsThrownExceptionDocumentedAnalyzer.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Contexts\AccessorOwnerProcessContext.cs" />
+    <Compile Include="Contexts\ConstructorProcessContext.cs" />
+    <Compile Include="Contexts\EventProcessContext.cs" />
+    <Compile Include="Contexts\IProcessContext.cs" />
+    <Compile Include="Contexts\MethodProcessContext.cs" />
+    <Compile Include="Contexts\NullProcessContext.cs" />
+    <Compile Include="Contexts\ProcessContext.cs" />
+    <Compile Include="DefaultResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DefaultResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ExceptionalDaemonStage.cs" />
+    <Compile Include="ExceptionalDaemonStageProcess.cs" />
+    <Compile Include="ExceptionalRecursiveElementProcessor.cs" />
+    <Compile Include="Highlightings\CatchAllClauseHighlighting.cs" />
+    <Compile Include="Highlightings\EventExceptionNotDocumentedHighlighting.cs" />
+    <Compile Include="Highlightings\ExceptionNotDocumentedHighlighting.cs" />
+    <Compile Include="Highlightings\ExceptionNotDocumentedOptionalHighlighting.cs" />
+    <Compile Include="Highlightings\ExceptionNotThrownHighlighting.cs" />
+    <Compile Include="Highlightings\ExceptionNotThrownOptionalHighlighting.cs" />
+    <Compile Include="Highlightings\HighlightingBase.cs" />
+    <Compile Include="Highlightings\ThrowFromCatchWithNoInnerExceptionHighlighting.cs" />
+    <Compile Include="Highlightings\ThrowingSystemExceptionHighlighting.cs" />
+    <Compile Include="Images\ThemedIcons.Unnamed.Generated.cs" />
+    <Compile Include="Models\AccessorDeclarationModel.cs" />
+    <Compile Include="Models\AccessorOwnerDeclarationModel.cs" />
+    <Compile Include="Models\AnalyzeUnitModelBase.cs" />
+    <Compile Include="Models\ArgumentNullExceptionDescription.cs" />
+    <Compile Include="Models\BlockModelBase.cs" />
+    <Compile Include="Models\CatchClauseModel.cs" />
+    <Compile Include="Models\CatchVariableModel.cs" />
+    <Compile Include="Models\ConstructorDeclarationModel.cs" />
+    <Compile Include="Models\DocCommentBlockModel.cs" />
+    <Compile Include="Models\EventDeclarationModel.cs" />
+    <Compile Include="Models\ExceptionDocCommentModel.cs" />
+    <Compile Include="Models\ExceptionsOrigins\ConstructorInitializerModel.cs" />
+    <Compile Include="Models\ExceptionsOrigins\ExpressionExceptionsOriginModelBase.cs" />
+    <Compile Include="Models\ExceptionsOrigins\IExceptionsOriginModel.cs" />
+    <Compile Include="Models\ExceptionsOrigins\ObjectCreationExpressionModel.cs" />
+    <Compile Include="Models\ExceptionsOrigins\ReferenceExpressionModel.cs" />
+    <Compile Include="Models\ExceptionsOrigins\ThrowExpressionModel.cs" />
+    <Compile Include="Models\ExceptionsOrigins\ThrowStatementModel.cs" />
+    <Compile Include="Models\IAnalyzeUnit.cs" />
+    <Compile Include="Models\IBlockModel.cs" />
+    <Compile Include="Models\MethodDeclarationModel.cs" />
+    <Compile Include="Models\ModelBase.cs" />
+    <Compile Include="Models\ThrownExceptionModel.cs" />
+    <Compile Include="Models\ThrownExceptionsReader.cs" />
+    <Compile Include="Models\TreeElementModelBase.cs" />
+    <Compile Include="Models\TryStatementModel.cs" />
+    <Compile Include="Options\AccessorOverridesOptionsPage.cs" />
+    <Compile Include="Options\ExceptionalOptionsPage.cs" />
+    <Compile Include="Options\ExclusionsOptionsPage.cs" />
+    <Compile Include="Options\NamespacesToIgnoreOptionsPage.cs" />
+    <Compile Include="Options\ExceptionTypesAsHintForMethodOrPropertyOptionsPage.cs" />
+    <Compile Include="Options\ExceptionTypesAsHintOptionsPage.cs" />
+    <Compile Include="Options\GeneralOptionsPage.cs" />
+    <Compile Include="Options\InspectionLevelOptionsPage.cs" />
+    <Compile Include="Options\OptionsLabels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuickFixes\AddExceptionDocumentationFix.cs" />
+    <Compile Include="QuickFixes\AddToOptionalMethodExceptionsFix.cs" />
+    <Compile Include="QuickFixes\CatchExceptionFix.cs" />
+    <Compile Include="QuickFixes\IncludeInnerExceptionFix.cs" />
+    <Compile Include="QuickFixes\RemoveExceptionDocumentationFix.cs" />
+    <Compile Include="QuickFixes\SingleActionFix.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Settings\ExceptionAccessorOverride.cs" />
+    <Compile Include="Settings\ExceptionalSettings.cs" />
+    <Compile Include="Settings\OptionalExceptionConfiguration.cs" />
+    <Compile Include="Settings\OptionalExceptionReplacementType.cs" />
+    <Compile Include="Settings\OptionalMethodExceptionConfiguration.cs" />
+    <Compile Include="Utilities\CodeElementFactory.cs" />
+    <Compile Include="Utilities\NameFactory.cs" />
+    <Compile Include="Utilities\NamespaceChecker.cs" />
+    <Compile Include="Utilities\WildcardMatch.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ThemedIconPng Include="Images\ExceptionalSettings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Images\ThemedIcons.Unnamed.Generated.Xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DefaultResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DefaultResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <MSBuildCommunityTasksPath>$(SolutionDir)\..\build\MSBuildTasks</MSBuildCommunityTasksPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildCommunityTasksPath)\MSBuild.Community.Tasks.Targets" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="CopyDLLs" AfterTargets="Build">
+    <Message Text="Executing CopyDLLs task" Importance="High" />
+    <Copy SourceFiles="$(TargetDir)$(AssemblyName).dll;$(TargetDir)$(AssemblyName).pdb" DestinationFolder="$(SolutionDir)\..\build\lib\" />
+    <Message Text="Copied build files" Importance="High" />
+  </Target>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
