@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>ExceptionalDevs.ExceptionalContinued</id>
-    <version>2023.1.2</version>
+    <version>2023.2.0</version>
     <title>Exceptional Continued</title>
     <description>Analyzes thrown and documented C# exceptions and suggests improvements.</description>
     <authors>Exceptional Devs, Robert Weinmeister</authors>
@@ -11,14 +11,14 @@
     <tags>Exception XMLdoc</tags>
     <licenseUrl>https://github.com/RobertWeinmeister/ExceptionalReSharper/blob/master/LICENSE.md</licenseUrl>
 	<releaseNotes>
-      Some update description
+      Update for ReSharper 2023.2.0
 	</releaseNotes>
    <dependencies>
-      <dependency id="Wave" version="[231]" />
+      <dependency id="Wave" version="[232]" />
     </dependencies>
   </metadata>
   <files>
-    <file src="..\build\lib\ReSharper.Exceptional.dll" target="DotFiles" />
-    <file src="..\build\lib\ReSharper.Exceptional.pdb" target="DotFiles" />
+    <file src="..\build\lib\ReSharper.ExceptionalContinued.dll" target="DotFiles" />
+    <file src="..\build\lib\ReSharper.ExceptionalContinued.pdb" target="DotFiles" />
   </files>
 </package>
